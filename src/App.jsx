@@ -69,7 +69,7 @@ function App() {
     const handleWheel = () => {
       if (!activated) {
         setActivated(true);
-        setShowContent(true); 
+        setShowContent(true);
       }
     };
 
@@ -80,8 +80,17 @@ function App() {
 
 
   return (
-    <div className="bg-[#0B0B0F] text-white min-h-screen overflow-hidden relative">
-      <Silk speed={2} scale={0.8} color="#0c0c0d" />
+    <div className="relative min-h-screen text-white bg-[#0B0B0F]">
+      <div className="fixed inset-0 -z-10">
+        <Silk
+          speed={3.1}
+          scale={0.8}
+          color="#0c0c0d"
+          noiseIntensity={0}
+          rotation={0}
+        />
+      </div>
+
       {!showContent && (
         <motion.div
           initial={{ opacity: 1 }}
@@ -103,7 +112,7 @@ function App() {
           />
         </motion.div>
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0F] via-[#0B0B0F] to-[#050507] -z-10"></div>
+
 
 
 
@@ -159,7 +168,7 @@ function App() {
         </motion.nav>
       )}
 
-     
+
       {
         showContent && (
           <motion.div
@@ -214,19 +223,28 @@ function App() {
                   }}
                   className="absolute w-72 h-72 rounded-full bg-blue-500/3 blur-3xl"
                 ></motion.div>
-
                 <motion.div
                   style={{
                     x: mousePos.x * 20,
                     y: mousePos.y * 20,
                   }}
-                  className="w-52 h-52 bg-gray-900 rounded-full flex items-center justify-center shadow-[0_0_120px_rgba(0,150,255,0.15)] z-20"
+                  className="relative w-64 h-64 flex items-center justify-center z-20"
                 >
-                  Watch
+                  {/* Glow */}
+                  <div className="absolute w-48 h-48 bg-gradient-radial from-blue-500/30 to-transparent blur-2xl"></div>
+
+                  {/* Watch Image */}
+                  <img
+                    src="/watch.png"
+                    alt="Watch"
+                    className="relative w-full h-full object-contain drop-shadow-[0_0_35px_rgba(0,150,255,0.35)]"
+                  />
                 </motion.div>
 
 
-           
+
+
+
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
@@ -429,7 +447,7 @@ function App() {
 
             {/* PRICING */}
             <motion.section
-            id="pricing"
+              id="pricing"
               variants={revealVariant}
               initial="hidden"
               whileInView="visible"
