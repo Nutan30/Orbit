@@ -401,7 +401,7 @@ function App() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
               className="min-h-screen flex flex-col items-center justify-center">
-              <h2 className="text-4xl font-semibold mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold mb-24 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
                 Performance Backed by Data
               </h2>
 
