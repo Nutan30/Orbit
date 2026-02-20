@@ -204,210 +204,103 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
-              className="min-h-screen flex flex-col items-center justify-center relative px-10"
+              className="min-h-screen flex flex-col items-center justify-center px-20"
             >
-              <h2 className="text-5xl md:text-6xl font-bold mb-24 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+              <h2 className="text-5xl md:text-6xl font-bold mb-20 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
                 Engineered for Precision
               </h2>
 
-              <div className="relative w-[600px] h-[600px] flex items-center justify-center">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    opacity: [0.3, 0.5, 0.4],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute w-72 h-72 rounded-full bg-blue-500/3 blur-3xl"
-                ></motion.div>
+              <div className="relative w-full flex items-center justify-between max-w-6xl">
+
+                {/* LEFT SIDE */}
+                <div className="flex flex-col gap-12 w-1/3">
+
+                  {/* Feature Card */}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    style={{
+                      x: mousePos.x * -15,
+                      y: mousePos.y * -15,
+                    }}
+                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                  >
+                    <h3 className="text-xl font-semibold mb-3">Sleep Analysis</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      Deep recovery insights for smarter training.
+                    </p>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    style={{
+                      x: mousePos.x * -15,
+                      y: mousePos.y * -15,
+                    }}
+                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                  >
+                    <h3 className="text-xl font-semibold mb-3">GPS Tracking</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      Accurate outdoor routes with precision mapping.
+                    </p>
+                  </motion.div>
+
+                </div>
+
+
+                {/* CENTER WATCH */}
                 <motion.div
                   style={{
                     x: mousePos.x * 20,
                     y: mousePos.y * 20,
                   }}
-                  className="relative w-64 h-64 flex items-center justify-center z-20"
+                  className="relative w-72 h-72 flex items-center justify-center"
                 >
-                  {/* Glow */}
-                  <div className="absolute w-48 h-48 bg-gradient-radial from-blue-500/30 to-transparent blur-2xl"></div>
+                  {/* Soft White Glow */}
+                  <div className="absolute w-64 h-64 bg-white/5 blur-2xl rounded-full"></div>
+                  <div className="absolute w-96 h-96 bg-white/3 blur-[140px] rounded-full"></div>
 
-                  {/* Watch Image */}
                   <img
                     src="/watch.png"
                     alt="Watch"
-                    className="relative w-full h-full object-contain drop-shadow-[0_0_35px_rgba(0,150,255,0.35)]"
+                    className="relative w-full h-full object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.25)]"
                   />
                 </motion.div>
 
 
+                {/* RIGHT SIDE */}
+                <div className="flex flex-col gap-12 w-1/3">
 
-
-
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 120,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  style={{
-                    x: mousePos.x * 10,
-                    y: mousePos.y * 10,
-                  }}
-
-                  className="absolute w-full h-full"
-                >
-
-                  <svg
-                    className="absolute inset-0 w-full h-full pointer-events-none"
-                    viewBox="0 0 600 600"
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    style={{
+                      x: mousePos.x * 15,
+                      y: mousePos.y * 15,
+                    }}
+                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
                   >
+                    <h3 className="text-xl font-semibold mb-3">Heart Monitoring</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      Real-time precision health tracking.
+                    </p>
+                  </motion.div>
 
-                    {/* TOP */}
-                    <motion.line
-                      x1="300"
-                      y1="300"
-                      x2="300"
-                      y2="120"
-                      stroke="rgba(0,150,255,0.25)"
-                      strokeWidth="1.5"
-                      initial={{ strokeDasharray: 180, strokeDashoffset: 180 }}
-                      whileInView={{ strokeDashoffset: 0 }}
-                      transition={{ duration: 1.2, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                    />
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    style={{
+                      x: mousePos.x * 15,
+                      y: mousePos.y * 15,
+                    }}
+                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                  >
+                    <h3 className="text-xl font-semibold mb-3">14-Day Battery</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      Endurance built for athletes.
+                    </p>
+                  </motion.div>
 
-                    {/* RIGHT */}
-                    <motion.line
-                      x1="300"
-                      y1="300"
-                      x2="480"
-                      y2="300"
-                      stroke="rgba(0,150,255,0.25)"
-                      strokeWidth="1.5"
-                      initial={{ strokeDasharray: 180, strokeDashoffset: 180 }}
-                      whileInView={{ strokeDashoffset: 0 }}
-                      transition={{ duration: 1.2, delay: 0.1, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                    />
-
-                    {/* BOTTOM */}
-                    <motion.line
-                      x1="300"
-                      y1="300"
-                      x2="300"
-                      y2="480"
-                      stroke="rgba(0,150,255,0.25)"
-                      strokeWidth="1.5"
-                      initial={{ strokeDasharray: 180, strokeDashoffset: 180 }}
-                      whileInView={{ strokeDashoffset: 0 }}
-                      transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                    />
-
-                    {/* LEFT */}
-                    <motion.line
-                      x1="300"
-                      y1="300"
-                      x2="120"
-                      y2="300"
-                      stroke="rgba(0,150,255,0.25)"
-                      strokeWidth="1.5"
-                      initial={{ strokeDasharray: 180, strokeDashoffset: 180 }}
-                      whileInView={{ strokeDashoffset: 0 }}
-                      transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                    />
-
-                  </svg>
-
-
-                  {/* TOP */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[-330px]">
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 120,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
-                        <h3 className="text-xl font-semibold tracking-wide mb-2">Heart Monitoring</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          Real-time precision tracking
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* RIGHT */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-x-[140px]">
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 120,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
-                        <h3 className="text-xl font-semibold tracking-wide mb-2">GPS Tracking</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          Accurate outdoor routes
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* BOTTOM */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[180px]">
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 120,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
-                        <h3 className="text-xl font-semibold tracking-wide mb-2">Sleep Analysis</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          Deep recovery insights
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* LEFT */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-x-[-340px]">
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{
-                        duration: 120,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    >
-                      <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
-                        <h3 className="text-xl font-semibold tracking-wide mb-2">14-Day Battery</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          Endurance built for athletes
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                </motion.div>
+                </div>
 
               </div>
-
             </motion.section>
 
 
