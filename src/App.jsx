@@ -1,9 +1,36 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import PrismaticBurst from './PrismaticBurst.jsx';
 import WatchSpline from "./WatchSpline";
 import Silk from "./Silk";
 
+function CountUp({ end, duration = 2 }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let start = 0;
+    const increment = end / (duration * 60);
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(counter);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 1000 / 60);
+
+    return () => clearInterval(counter);
+  }, [isInView, end, duration]);
+
+  return <span ref={ref}>{count}</span>;
+}
 function App() {
   const [activated, setActivated] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -121,10 +148,10 @@ function App() {
           {/* NAVBAR */}
           <nav className="fixed top-0 left-0 w-full flex justify-end items-center px-10 py-6 bg-[#0B0B0F] z-40">
             <div className="space-x-8 text-sm tracking-wide">
-              <a href="#">Features</a>
-              <a href="#">Performance</a>
-              <a href="#">Stats</a>
-              <a className="border border-white px-4 py-2 rounded-full">
+              <a href="#features" className="hover:text-white transition" >Features</a>
+              <a href="#" className="hover:text-white transition">Performance</a>
+              <a href="#stats" className="hover:text-white transition">Stats</a>
+              <a id="pricing" href="#pricing" className="border border-white px-4 py-2 rounded-full">
                 Buy Now
               </a>
             </div>
@@ -132,7 +159,7 @@ function App() {
         </motion.nav>
       )}
 
-      {/* WEBSITE CONTENT - ONLY AFTER ACTIVATION */}
+     
       {
         showContent && (
           <motion.div
@@ -145,9 +172,9 @@ function App() {
 
 
             {/* HERO */}
-            <section className="min-h-screen flex items-center justify-between px-20 pt-8">
+            <section id="hero" className="min-h-screen flex items-center justify-between px-20 pt-8">
               <div className="w-1/2">
-                <h2 className="text-5xl font-semibold mb-6">
+                <h2 className="text-7xl md:text-8xl font-extrabold mb-6 leading-[1.05] bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
                   Track Beyond Limits.
                 </h2>
                 <p className="text-gray-400 mb-8 max-w-md">
@@ -163,6 +190,7 @@ function App() {
 
             {/* FEATURES */}
             <motion.section
+              id="features"
               variants={revealVariant}
               initial="hidden"
               whileInView="visible"
@@ -198,7 +226,7 @@ function App() {
                 </motion.div>
 
 
-                {/* Rotating Orbit Layer */}
+           
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
@@ -214,7 +242,6 @@ function App() {
                   className="absolute w-full h-full"
                 >
 
-                  {/* Orbit Lines */}
                   <svg
                     className="absolute inset-0 w-full h-full pointer-events-none"
                     viewBox="0 0 600 600"
@@ -364,6 +391,7 @@ function App() {
 
             {/* STATS */}
             <motion.section
+              id="stats"
               variants={revealVariant}
               initial="hidden"
               whileInView="visible"
@@ -375,19 +403,19 @@ function App() {
 
               <div className="grid grid-cols-4 gap-16 text-center">
                 <div>
-                  <h3 className="text-5xl font-bold">98%</h3>
+                  <h3 className="text-5xl font-bold"><CountUp end={98} />%</h3>
                   <p className="text-gray-400 mt-2">Accuracy</p>
                 </div>
                 <div>
-                  <h3 className="text-5xl font-bold">24/7</h3>
+                  <h3 className="text-5xl font-bold"><CountUp end={24} /></h3>
                   <p className="text-gray-400 mt-2">Monitoring</p>
                 </div>
                 <div>
-                  <h3 className="text-5xl font-bold">50+</h3>
+                  <h3 className="text-5xl font-bold"><CountUp end={50} />+</h3>
                   <p className="text-gray-400 mt-2">Workout Modes</p>
                 </div>
                 <div>
-                  <h3 className="text-5xl font-bold">14 Days</h3>
+                  <h3 className="text-5xl font-bold"><CountUp end={14} /> Days</h3>
                   <p className="text-gray-400 mt-2">Battery Life</p>
                 </div>
               </div>
@@ -397,6 +425,7 @@ function App() {
 
             {/* PRICING */}
             <motion.section
+            id="pricing"
               variants={revealVariant}
               initial="hidden"
               whileInView="visible"
