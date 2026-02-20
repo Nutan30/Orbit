@@ -406,21 +406,21 @@ function App() {
               </h2>
 
               <div className="grid grid-cols-4 gap-16 text-center">
-                <div>
-                  <h3 className="text-5xl font-bold"><CountUp end={98} />%</h3>
-                  <p className="text-gray-400 mt-2">Accuracy</p>
+                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2"><CountUp end={98} />%</h3>
+                  <p className="text-gray-400 text-sm">Accuracy</p>
                 </div>
-                <div>
-                  <h3 className="text-5xl font-bold"><CountUp end={24} /></h3>
-                  <p className="text-gray-400 mt-2">Monitoring</p>
+                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2"><CountUp end={24} /></h3>
+                  <p className="text-gray-400 text-sm">Monitoring</p>
                 </div>
-                <div>
-                  <h3 className="text-5xl font-bold"><CountUp end={50} />+</h3>
-                  <p className="text-gray-400 mt-2">Workout Modes</p>
+                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2"><CountUp end={50} />+</h3>
+                  <p className="text-gray-400 text-sm">Workout Modes</p>
                 </div>
-                <div>
-                  <h3 className="text-5xl font-bold"><CountUp end={14} /> Days</h3>
-                  <p className="text-gray-400 mt-2">Battery Life</p>
+                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2"><CountUp end={14} /> Days</h3>
+                  <p className="text-gray-400 text-sm">Battery Life</p>
                 </div>
               </div>
             </motion.section>
