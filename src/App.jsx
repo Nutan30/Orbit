@@ -80,15 +80,9 @@ function App() {
 
 
   return (
-    <div className="relative min-h-screen text-white bg-[#0B0B0F]">
+    <div className="min-h-screen text-white bg-gradient-to-b from-black via-[#0b0b0b] to-black">
       <div className="fixed inset-0 -z-10">
-        <Silk
-          speed={3.1}
-          scale={0.8}
-          color="#0c0c0d"
-          noiseIntensity={0}
-          rotation={0}
-        />
+
       </div>
 
       {!showContent && (
@@ -117,7 +111,6 @@ function App() {
 
 
 
-      {/* ORBIT LOGO */}
       <motion.h1
         initial={{
           scale: 1,
@@ -155,7 +148,7 @@ function App() {
           transition={{ duration: 0.4 }}
         >
           {/* NAVBAR */}
-          <nav className="fixed top-0 left-0 w-full flex justify-end items-center px-10 py-6 bg-[#0B0B0F] z-40">
+          <nav className="fixed top-0 left-0 w-full flex justify-end items-center px-10 py-6 bg-[#000000] z-40">
             <div className="space-x-8 text-sm tracking-wide">
               <a href="#features" className="hover:text-white transition" >Features</a>
               <a href="#" className="hover:text-white transition">Performance</a>
@@ -204,43 +197,42 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
-              className="min-h-screen flex flex-col items-center justify-center px-20"
+              className="min-h-screen flex flex-col items-center justify-center px-20 bg-gradient-to-b from-black via-[#0b0b0b] to-black"
             >
-              <h2 className="text-5xl md:text-6xl font-bold mb-20 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-                Engineered for Precision
+              <h2 className="text-5xl md:text-6xl font-bold mb-24 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+                Crafted for Excellence
               </h2>
 
-              <div className="relative w-full flex items-center justify-between max-w-6xl">
+              <div className="relative w-full max-w-6xl flex items-center justify-between">
 
-                {/* LEFT SIDE */}
-                <div className="flex flex-col gap-12 w-1/3">
+                {/* LEFT FEATURES */}
+                <div className="flex flex-col gap-20 w-1/3">
 
-                  {/* Feature Card */}
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    style={{
-                      x: mousePos.x * -15,
-                      y: mousePos.y * -15,
-                    }}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                    className="group"
                   >
-                    <h3 className="text-xl font-semibold mb-3">Sleep Analysis</h3>
+                    <h3 className="text-2xl font-medium mb-3 group-hover:text-white transition">
+                      Sleep Analysis
+                    </h3>
+                    <div className="w-12 h-[1px] bg-white/40 mb-4"></div>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Deep recovery insights for smarter training.
+                      Precision recovery tracking designed for refined performance.
                     </p>
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    style={{
-                      x: mousePos.x * -15,
-                      y: mousePos.y * -15,
-                    }}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                    className="group"
                   >
-                    <h3 className="text-xl font-semibold mb-3">GPS Tracking</h3>
+                    <h3 className="text-2xl font-medium mb-3 group-hover:text-white transition">
+                      GPS Tracking
+                    </h3>
+                    <div className="w-12 h-[1px] bg-white/40 mb-4"></div>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Accurate outdoor routes with precision mapping.
+                      Advanced route accuracy engineered with sophistication.
                     </p>
                   </motion.div>
 
@@ -250,51 +242,49 @@ function App() {
                 {/* CENTER WATCH */}
                 <motion.div
                   style={{
-                    x: mousePos.x * 20,
-                    y: mousePos.y * 20,
+                    x: mousePos.x * 10,
+                    y: mousePos.y * 10,
                   }}
-                  className="relative w-72 h-72 flex items-center justify-center"
+                  className="relative w-80 h-80 flex items-center justify-center"
                 >
-                  {/* Soft White Glow */}
-                  <div className="absolute w-64 h-64 bg-white/5 blur-2xl rounded-full"></div>
-                  <div className="absolute w-96 h-96 bg-white/3 blur-[140px] rounded-full"></div>
+                  <div className="absolute w-96 h-96 bg-white/5 blur-[140px] rounded-full"></div>
 
                   <img
                     src="/watch.png"
-                    alt="Watch"
-                    className="relative w-full h-full object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.25)]"
+                    alt="Luxury Watch"
+                    className="relative w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(255,255,255,0.08)]"
                   />
                 </motion.div>
 
 
-                {/* RIGHT SIDE */}
-                <div className="flex flex-col gap-12 w-1/3">
+                {/* RIGHT FEATURES */}
+                <div className="flex flex-col gap-20 w-1/3 text-right">
 
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    style={{
-                      x: mousePos.x * 15,
-                      y: mousePos.y * 15,
-                    }}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                    className="group"
                   >
-                    <h3 className="text-xl font-semibold mb-3">Heart Monitoring</h3>
+                    <h3 className="text-2xl font-medium mb-3 group-hover:text-white transition">
+                      Heart Monitoring
+                    </h3>
+                    <div className="w-12 h-[1px] bg-white/40 mb-4 ml-auto"></div>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Real-time precision health tracking.
+                      Continuous biometric intelligence with refined precision.
                     </p>
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    style={{
-                      x: mousePos.x * 15,
-                      y: mousePos.y * 15,
-                    }}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                    className="group"
                   >
-                    <h3 className="text-xl font-semibold mb-3">14-Day Battery</h3>
+                    <h3 className="text-2xl font-medium mb-3 group-hover:text-white transition">
+                      14-Day Battery
+                    </h3>
+                    <div className="w-12 h-[1px] bg-white/40 mb-4 ml-auto"></div>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Endurance built for athletes.
+                      Endurance crafted for timeless reliability.
                     </p>
                   </motion.div>
 
@@ -311,31 +301,79 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
-              className="min-h-screen flex flex-col items-center justify-center">
-              <h2 className="text-5xl md:text-6xl font-bold mb-24 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+              className="relative min-h-screen flex flex-col items-center justify-center 
+  bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505] overflow-hidden"
+            >
+
+           
+              <div className="absolute w-[900px] h-[900px] bg-white/5 blur-[200px] rounded-full -z-10"></div>
+
+              <h2 className="text-5xl md:text-6xl font-bold mb-24 text-center tracking-tight
+  bg-gradient-to-r from-gray-200 via-white to-gray-400 bg-clip-text text-transparent">
                 Performance Backed by Data
               </h2>
 
               <div className="grid grid-cols-4 gap-16 text-center">
-                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
-                  <h3 className="text-5xl font-bold mb-2"><CountUp end={98} />%</h3>
-                  <p className="text-gray-400 text-sm">Accuracy</p>
+
+                {/* CARD */}
+                <div className="p-10 rounded-2xl 
+      bg-gradient-to-b from-[#111111] to-[#0b0b0b]
+      border border-white/10
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]
+      transition-all duration-300
+      hover:border-white/30
+      hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]
+      hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2 text-white">
+                    <CountUp end={98} />%
+                  </h3>
+                  <p className="text-gray-400 text-sm tracking-wide">Accuracy</p>
                 </div>
-                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
-                  <h3 className="text-5xl font-bold mb-2"><CountUp end={24} /></h3>
-                  <p className="text-gray-400 text-sm">Monitoring</p>
+
+                <div className="p-10 rounded-2xl 
+      bg-gradient-to-b from-[#111111] to-[#0b0b0b]
+      border border-white/10
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]
+      transition-all duration-300
+      hover:border-white/30
+      hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]
+      hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2 text-white">
+                    <CountUp end={24} />
+                  </h3>
+                  <p className="text-gray-400 text-sm tracking-wide">Monitoring</p>
                 </div>
-                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
-                  <h3 className="text-5xl font-bold mb-2"><CountUp end={50} />+</h3>
-                  <p className="text-gray-400 text-sm">Workout Modes</p>
+
+                <div className="p-10 rounded-2xl 
+      bg-gradient-to-b from-[#111111] to-[#0b0b0b]
+      border border-white/10
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]
+      transition-all duration-300
+      hover:border-white/30
+      hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]
+      hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2 text-white">
+                    <CountUp end={50} />+
+                  </h3>
+                  <p className="text-gray-400 text-sm tracking-wide">Workout Modes</p>
                 </div>
-                <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-105">
-                  <h3 className="text-5xl font-bold mb-2"><CountUp end={14} /> Days</h3>
-                  <p className="text-gray-400 text-sm">Battery Life</p>
+
+                <div className="p-10 rounded-2xl 
+      bg-gradient-to-b from-[#111111] to-[#0b0b0b]
+      border border-white/10
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]
+      transition-all duration-300
+      hover:border-white/30
+      hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]
+      hover:scale-105">
+                  <h3 className="text-5xl font-bold mb-2 text-white">
+                    <CountUp end={14} /> Days
+                  </h3>
+                  <p className="text-gray-400 text-sm tracking-wide">Battery Life</p>
                 </div>
+
               </div>
             </motion.section>
-
 
 
             {/* PRICING */}
@@ -345,37 +383,74 @@ function App() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
-              className="min-h-screen flex flex-col items-center justify-center">
-              <h2 className="text-4xl font-semibold mb-16">
+              className="relative min-h-screen flex flex-col items-center justify-center 
+  bg-[#050505]"
+            >
+
+              <h2 className="text-5xl font-semibold mb-16 
+  bg-gradient-to-r from-gray-300 via-white to-gray-400 
+  bg-clip-text text-transparent">
                 Choose Your Orbit
               </h2>
 
-              <div className="flex gap-12">
-                <div className="bg-gray-900 p-10 rounded-2xl w-80 text-center">
-                  <h3 className="text-2xl mb-4">Orbit Standard</h3>
-                  <p className="text-4xl font-bold mb-6">₹9,999</p>
-                  <ul className="text-gray-400 space-y-3 mb-6">
-                    <li>7-Day Battery</li>
-                    <li>50+ Workout Modes</li>
-                    <li>Basic AI Insights</li>
-                  </ul>
-                  <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition duration-300">
-                    Select Plan
+              <div className="flex gap-16">
+
+             
+                <div className="w-80 p-10 rounded-2xl 
+      bg-gradient-to-b from-[#111] to-[#0a0a0a]
+      border border-white/10
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]
+      transition duration-300
+      hover:border-white/30
+      hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]
+      hover:scale-105 text-center">
+
+                  <img
+                    src="/watch1.png"   
+                    alt="Orbit Standard"
+                    className="w-40 mx-auto mb-6 object-contain"
+                  />
+
+                  <h3 className="text-2xl text-gray-200 mb-2">Orbit Standard</h3>
+                  <p className="text-4xl font-bold text-white mb-6">₹9,999</p>
+
+                  <button className="px-6 py-3 rounded-full 
+        bg-white text-black font-medium 
+        transition duration-300 
+        hover:bg-gray-200">
+                    Buy Now
                   </button>
                 </div>
 
-                <div className="bg-gray-800 p-10 rounded-2xl w-80 text-center border border-white">
-                  <h3 className="text-2xl mb-4">Orbit Pro</h3>
-                  <p className="text-4xl font-bold mb-6">₹14,999</p>
-                  <ul className="text-gray-400 space-y-3 mb-6">
-                    <li>14-Day Battery</li>
-                    <li>Advanced AI Insights</li>
-                    <li>Premium Titanium Body</li>
-                  </ul>
-                  <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition duration-300">
-                    Select Plan
+
+      
+                <div className="w-80 p-10 rounded-2xl 
+      bg-gradient-to-b from-[#111] to-[#0a0a0a]
+      border border-white/10
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]
+      transition duration-300
+      hover:border-white/30
+      hover:shadow-[0_0_35px_rgba(255,255,255,0.15)]
+      hover:scale-105 text-center">
+
+               
+                  <img
+                    src="/watch2.png"  
+                    alt="Orbit Pro"
+                    className="w-40 mx-auto mb-6 object-contain"
+                  />
+
+                  <h3 className="text-2xl text-gray-200 mb-2">Orbit Pro</h3>
+                  <p className="text-4xl font-bold text-white mb-6">₹14,999</p>
+
+                  <button className="px-6 py-3 rounded-full 
+        bg-white text-black font-medium 
+        transition duration-300 
+        hover:bg-gray-200">
+                    Buy Now
                   </button>
                 </div>
+
               </div>
             </motion.section>
 
