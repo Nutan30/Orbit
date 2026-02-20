@@ -197,7 +197,7 @@ function App() {
               viewport={{ once: false, amount: 0.3 }}
               className="min-h-screen flex flex-col items-center justify-center relative px-10"
             >
-              <h2 className="text-4xl font-semibold mb-24 tracking-wide">
+              <h2 className="text-5xl md:text-6xl font-bold mb-24 text-center tracking-tight bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
                 Engineered for Precision
               </h2>
 
@@ -307,7 +307,7 @@ function App() {
 
 
                   {/* TOP */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[-300px]">
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 translate-y-[-330px]">
                     <motion.div
                       animate={{ rotate: -360 }}
                       transition={{
@@ -317,8 +317,9 @@ function App() {
                       }}
                     >
                       <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <h3 className="font-semibold text-lg">Heart Monitoring</h3>
-                        <p className="text-gray-400 text-sm mt-2">
+                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
+                        <h3 className="text-xl font-semibold tracking-wide mb-2">Heart Monitoring</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
                           Real-time precision tracking
                         </p>
                       </div>
@@ -336,8 +337,9 @@ function App() {
                       }}
                     >
                       <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <h3 className="font-semibold text-lg">GPS Tracking</h3>
-                        <p className="text-gray-400 text-sm mt-2">
+                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
+                        <h3 className="text-xl font-semibold tracking-wide mb-2">GPS Tracking</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
                           Accurate outdoor routes
                         </p>
                       </div>
@@ -355,8 +357,9 @@ function App() {
                       }}
                     >
                       <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <h3 className="font-semibold text-lg">Sleep Analysis</h3>
-                        <p className="text-gray-400 text-sm mt-2">
+                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
+                        <h3 className="text-xl font-semibold tracking-wide mb-2">Sleep Analysis</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
                           Deep recovery insights
                         </p>
                       </div>
@@ -374,8 +377,9 @@ function App() {
                       }}
                     >
                       <div className="text-center max-w-[200px] bg-[#111115] border border-white/5 backdrop-blur-md rounded-xl px-6 py-5 shadow-lg transition duration-300 hover:scale-105 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(0,150,255,0.25)]">
-                        <h3 className="font-semibold text-lg">14-Day Battery</h3>
-                        <p className="text-gray-400 text-sm mt-2">
+                        <div className="w-10 h-[2px] bg-blue-400 mx-auto mb-4 opacity-60"></div>
+                        <h3 className="text-xl font-semibold tracking-wide mb-2">14-Day Battery</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
                           Endurance built for athletes
                         </p>
                       </div>
